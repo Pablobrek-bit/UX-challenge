@@ -6,6 +6,7 @@ import { Users } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { getRooms, getRoomsResponse } from '../api/room/getRooms';
 import { isUserInRoom } from '../api/user/isUserInRoom';
+import { joinRoom } from '../api/room/joinRoom';
 
 interface RoonsProps extends ComponentProps<'div'> {}
 
@@ -28,7 +29,7 @@ export function Roons({ ...props }: RoonsProps) {
     const userInRoom = await isUserInRoom(id);
 
     if (!userInRoom) {
-      alert('Você não está autorizado a entrar nesta sala');
+      await joinRoom(id);
       return;
     }
 
