@@ -25,15 +25,25 @@ export function Roons({ ...props }: RoonsProps) {
     setRooms(data);
   }
 
-  async function goToRoom(id: number) {
-    const userInRoom = await isUserInRoom(id);
+  async function goToRoom(room: getRoomsResponse) {
+    const userInRoom = await isUserInRoom(room.id);
 
     if (!userInRoom) {
-      await joinRoom(id);
+      if (room.password) {
+        const password = prompt('Digite a senha da sala:');
+        if (!password)
+          return alert('Precisa de uma senha para entrar na sala.');
+
+        await joinRoom(room.id, password);
+
+        return;
+      }
+
+      await joinRoom(room.id);
       return;
     }
 
-    navigate(`/mensagens/room/${id}`);
+    navigate(`/mensagens/room/${room.id}`);
   }
 
   useEffect(() => {
@@ -52,7 +62,7 @@ export function Roons({ ...props }: RoonsProps) {
             <Room
               key={room.id}
               name={room.name}
-              onClick={() => goToRoom(room.id)}
+              onClick={() => goToRoom(room)}
             />
           );
         })}

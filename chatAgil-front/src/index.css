@@ -5,22 +5,29 @@
 @layer utilities {
   /* Hide scrollbar for Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
-      display: none;
+    display: none;
   }
- /* Hide scrollbar for IE, Edge and Firefox */
+  /* Hide scrollbar for IE, Edge and Firefox */
   .no-scrollbar {
-      -ms-overflow-style: none;  /* IE and Edge */
-      scrollbar-width: none;  /* Firefox */
-}
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 
-.messages-scrollbar::-webkit-scrollbar {
-  width: 4px;
-}
-.messages-scrollbar::-webkit-scrollbar-track {
-  background: transparent;
-}
-.messages-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #35BE97;
-  border-radius: 4px;
-}
+  .messages-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  .messages-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .messages-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #35be97;
+    border-radius: 4px;
+  }
+
+  .hide-eye {
+    input::-ms-reveal,
+    input::-ms-clear {
+      display: none;
+    }
+  }
 }

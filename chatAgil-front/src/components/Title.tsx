@@ -1,8 +1,6 @@
-import { ComponentProps } from 'react'
+import { ComponentProps } from 'react';
 
-interface TitleProps extends ComponentProps<'h1'> {
-  // Defina suas props aqui
-}
+interface TitleProps extends ComponentProps<'h1'> {}
 
 export function Title({ children, ...props }: TitleProps) {
   return (
@@ -12,5 +10,5 @@ export function Title({ children, ...props }: TitleProps) {
     >
       {children}
     </h1>
-  )
+  );
 }

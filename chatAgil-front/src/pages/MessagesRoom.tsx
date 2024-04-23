@@ -37,7 +37,7 @@ export function MessagesRoom({ ...props }: MessagesProps) {
 
   return (
     <div
-      className="flex items-center align-center px-24 py-8 size-full"
+      className="flex items-center align-center px-12 py-8 size-full lg:px-24 sm:px-8"
       {...props}
     >
       {room && (

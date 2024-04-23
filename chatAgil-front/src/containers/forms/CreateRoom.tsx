@@ -18,7 +18,7 @@ export function CreateRoomForm({ ...props }: CreateRoomFormProps) {
 
   async function handleCreateRoom() {
     if (visibility === 'public') {
-      const data = await createRoom(name);
+      await createRoom(name);
 
       alert('Sala criada com sucesso');
 
@@ -27,7 +27,7 @@ export function CreateRoomForm({ ...props }: CreateRoomFormProps) {
 
     if (password !== confirmPassword) return alert('As senhas não são iguais');
 
-    const data = await createRoom(name, password);
+    await createRoom(name, password);
 
     alert('Sala criada com sucesso');
 

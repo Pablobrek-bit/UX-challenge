@@ -4,7 +4,6 @@ import { Lock, Mail } from 'lucide-react';
 import { Button } from '../../components/Button';
 import { useAuth } from '../../Auth/AuthProvider';
 import { useNavigate } from 'react-router-dom';
-import { socketIo } from '../../socket/socket';
 
 interface LoginFormProps extends ComponentProps<'form'> {}
 
@@ -59,7 +58,7 @@ export function LoginForm({ ...props }: LoginFormProps) {
         <Button variant="secondary" onClick={handleSubmit}>
           Entrar
         </Button>
-        <Button type="button" variant="input" onClick={handleRegister}>
+        <Button type="button" variant="primary" onClick={handleRegister}>
           Registrar-se
         </Button>
       </div>

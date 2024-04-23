@@ -2,6 +2,7 @@ import { ComponentProps } from 'react';
 import { UserLetter } from './UserLetter';
 import { VariantProps, cva } from 'class-variance-authority';
 import { cn } from '../lib/utils';
+import dayjs from 'dayjs';
 
 const messageVariants = cva(
   'border-b-2 rounded-lg p-2 min-w-[8rem] max-w-[22rem] flex flex-col items-center gap-2 h-fit',
@@ -33,12 +34,12 @@ export function Message({
 }: MessageProps) {
   return (
     <div className={cn(messageVariants({ variant, className }))} {...props}>
-      <div className="flex w-full justify-between items-center ">
+      <div className="flex w-full justify-between items-center gap-4">
         <strong className="font-medium text-[0.625rem] text-secondary-500 flex items-center justify-center gap-1">
           <UserLetter letter={name.trim()[0]} variant="small" />
           {variant === 'sent' ? 'Você' : name}
         </strong>
-        <span className="text-xxs">{time}</span>
+        <span className="text-xxs">{dayjs(time).format('HH:mm')}</span>
       </div>
       <p className="text-slate-800 text-[0.875rem] text-left w-full">
         {message}

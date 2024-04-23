@@ -1,11 +1,9 @@
-import { ComponentProps } from 'react'
+import { ComponentProps } from 'react';
 
-import chatAgilLogo from '../assets/chat-agil-logo.svg'
-import { Outlet } from 'react-router-dom'
+import chatAgilLogo from '../assets/chat-agil-logo.svg';
+import { Outlet } from 'react-router-dom';
 
-interface AuthLayoutProps extends ComponentProps<'div'> {
-  // Defina suas props aqui
-}
+interface AuthLayoutProps extends ComponentProps<'div'> {}
 
 export function AuthLayout({ ...props }: AuthLayoutProps) {
   return (
@@ -19,5 +17,5 @@ export function AuthLayout({ ...props }: AuthLayoutProps) {
         </div>
       </div>
     </div>
-  )
+  );
 }

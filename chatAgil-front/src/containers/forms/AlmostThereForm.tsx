@@ -6,6 +6,7 @@ import { User as UserType } from '../../types/User';
 import { useNavigate } from 'react-router-dom';
 import { socketIo } from '../../socket/socket';
 import { useAuth } from '../../Auth/AuthProvider';
+import { Title } from '../../components/Title';
 
 interface AlmostThereFormProps extends ComponentProps<'form'> {}
 
@@ -62,6 +63,7 @@ export function AlmostThereForm({ ...props }: AlmostThereFormProps) {
       {...props}
       className="size-full flex flex-col justify-between align-center"
     >
+      <Title>Quase lá </Title>
       <div className="flex w-full gap-4 flex-col">
         <Input
           label="Usuário"

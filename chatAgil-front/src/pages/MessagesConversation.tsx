@@ -44,7 +44,7 @@ export function MessagesConversation({ ...props }: MessagesProps) {
 
   return (
     <div
-      className="flex items-center align-center px-24 py-8 size-full"
+      className="flex items-center align-center px-12 py-8 size-full lg:px-24 sm:px-8"
       {...props}
     >
       {conversation && (
@@ -74,7 +74,7 @@ export function MessagesConversation({ ...props }: MessagesProps) {
             <div className="flex flex-col items-center justify-end w-full gap-2 overflow-y-auto h-full messages-scrollbar px-8">
               {conversation?.messages.map((message) => {
                 return (
-                  <div className="flex w-full" key={message.id}>
+                  <div className="flex w-full flex-shrink-0" key={message.id}>
                     <Message
                       message={message.text}
                       name={message.user.name}

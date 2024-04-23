@@ -22,7 +22,7 @@ export function Input({
     <div
       aria-disabled={disabled}
       className="h-16 w-full border-b-2 border-slate-400 bg-slate-100 focus-within:border-primary-500 flex 
-     gap-2 px-3 py-2 items-center rounded-lg text-slate-500 focus-within:text-primary-500 aria-[disabled=true]:color-slate-400 aria-[disabled=true]:bg-slate-200"
+     gap-2 px-3 py-2 items-center rounded-lg text-slate-500 focus-within:text-primary-500 aria-[disabled=true]:color-slate-400 aria-[disabled=true]:bg-slate-200 hide-eye"
       onClick={onClick}
     >
       <div className="w-full flex flex-col gap-1">
