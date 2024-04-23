@@ -4,7 +4,6 @@ import { UserInMemoryRepository } from '../../../repository/in-memory/user-in-me
 import { AuthUserService } from '../../user/auth-user-service';
 import { hash } from 'bcryptjs';
 import { UserCredentialsIncorrectError } from '../../errors/user/user-credentials-incorrect-error';
-import { UserNotExistsError } from '../../errors/user/user-not-exists-error';
 
 describe('Auth user service', () => {
   let userRepository: UserInMemoryRepository;

@@ -3,10 +3,11 @@ import { UserRepository } from '../interfaces/user-repository';
 import { randomUUID } from 'crypto';
 
 export class UserInMemoryRepository implements UserRepository {
+  public users: User[] = [];
   getOn(): Promise<{ id: string; name: string; status: $Enums.UserStatus }[]> {
     throw new Error('Method not implemented.');
   }
-  public users: User[] = [];
+
   async create(data: Prisma.UserCreateInput) {
     const user = {
       id: randomUUID(),
